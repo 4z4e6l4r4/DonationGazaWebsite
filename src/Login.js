@@ -26,8 +26,7 @@ const Login = ({ onClose }) => {
     <Col span={10}>
     <div>
       <h2>Login</h2>
-      <label>Email:</label>
-      <br />
+     
       <Input
         type="email"
         value={email}
@@ -42,8 +41,7 @@ const Login = ({ onClose }) => {
         }
       />
       <br />
-      <br />
-      <label>Password:</label>
+     
       <br />
       <Input.Password
       size="large"

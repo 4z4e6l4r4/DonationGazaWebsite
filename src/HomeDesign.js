@@ -3,6 +3,7 @@ import { Anchor, Col, Row } from "antd";
 import LoginRegister from "./LoginRegister";
 import Statistics from "./Statistics";
 import { Layout } from "antd";
+import Cart from './Cart';
 
 const { Footer } = Layout;
 
@@ -17,7 +18,8 @@ const HomeDesign = () => (
         }}
       />
       <LoginRegister />
-
+<br/>
+ <Cart/>
       <div
         id="part-2"
         style={{

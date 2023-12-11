@@ -26,8 +26,7 @@ const Register = ({ onClose }) => {
     <Col span={10}>
     <div >
       <h2>Register</h2>
-      <label>Email:</label>
-      <br />
+   
 
       <Input
         type="email"
@@ -43,8 +42,7 @@ const Register = ({ onClose }) => {
         }
       />
       <br />
-      <br />
-      <label>Password:</label>
+    
       <br />
       <Input.Password
         type="password"
