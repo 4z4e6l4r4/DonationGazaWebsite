@@ -1,13 +1,10 @@
 import './App.css';
-import {DatePicker} from 'antd';
-import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
   return ( 
-    <div>
-      <Navbar/>,
-   <DatePicker/>,
-   <ComponentDemo />
+    <div>  
+      <Home/>
     </div>
   );
 }
