@@ -19,7 +19,19 @@ const { Footer } = Layout;
 const HomeDesign = () => (
   <Row>
     <Col span={24}>
-      <div
+    <div style={{
+          height: "1000px",
+          backgroundSize: 'cover',
+
+          background: `url(${main})`,
+        }}>
+          
+<DonateCards/>
+<DonateCards/>
+
+      </div>
+
+      {/* <div
         id="part-1"
         style={{
           height: "150vh",
@@ -27,25 +39,24 @@ const HomeDesign = () => (
           backgroundSize: 'cover',
           opacity: 0.8,
         }}
-      />
- <DonateCards/>
+      /> */}
+ 
       <div/>
-      <div style={{
-          height: "1vh",
-          background: "#880000",
-        }}>
 
-      </div>
-      <div
+
+      {/* <div
         id="part-2"
         style={{
-          height: "150vh",
+          maxHeight: "100%",
+          maxWidth: "100%",
+
           background: "rgba(0,255,0,0.02)",
           background: `url(${flags})`,
           backgroundSize: 'cover',
           opacity: 0.8,
+
         }}
-      />
+      /> */}
   
      
      

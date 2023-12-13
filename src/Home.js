@@ -43,7 +43,12 @@ const Home = () => {
   return (
     <Layout>
       
-      <Sider >
+      <Sider 
+      style={{
+        opacity: "0.9",
+
+      }}
+      >
         <div className="demo-logo-vertical" />
         <Modal title="Wellcome" visible={isModalOpen} onOk={handleOk} onCancel={handleCancel}
          okButtonProps={{ style: { display: 'none' } }} 
@@ -61,9 +66,10 @@ const Home = () => {
 <CardMainModul/>
 
           
-      </Modal>
+      </Modal >
 
         <Menu
+        
           theme="dark"
           mode="inline"
           defaultSelectedKeys={['1']}

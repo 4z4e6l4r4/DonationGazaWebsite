@@ -1,25 +1,39 @@
 import React from "react";
 import { Card, Col, Row } from "antd";
 
-
 const { Meta } = Card;
 
 const DonateCard = () => (
-  <div  style={{
-    textAlign: 'center',
-    marginLeft: '60px'
-}}>
-    <Row gutter={24}
+  <div
+    backgroun
     style={{
-      textAlign: 'center'
-}}>
-      <Col span={6} >
+      display: 'flex',
+      alignItems: 'center',
+      textAlign: 'center',
+      flexDirection: 'column',
+      marginTop: '10px',
+      // backgroundImage: 'url("https://www.millinizam.com/wp-content/uploads/2023/05/israil-filistin-sorunu-nedir.jpg")',
+      // backgroundSize: 'cover',
+      // backgroundPosition: 'center',
+      // height: '500px',
+      // width: '100%',
+    }}
+  >
+    <Row
+      gutter={24}
+      style={{
+        textAlign: "center",
+        marginTop: '100px',
+
+      }}
+    >
+      <Col span={6}>
         <Card
           hoverable
           style={{
             width: 300,
-            textAlign: 'center',
-
+            textAlign: "center",
+            opacity: "0.9",
           }}
           cover={
             <img
@@ -28,16 +42,22 @@ const DonateCard = () => (
             />
           }
         >
-          <Meta title="Educational Support" description="If you want to be a life for education in Palestine" />
+          <Meta
+            title="Educational Support"
+            description="If you want to be a life for education in Palestine"
+          />
         </Card>
       </Col>
-     
+
       <Col span={6}>
         <Card
           hoverable
           style={{
             width: 300,
-            textAlign: 'center',
+            textAlign: "center",
+            opacity: 0.9,
+            marginLeft: '70px'
+
           }}
           cover={
             <img
@@ -46,16 +66,22 @@ const DonateCard = () => (
             />
           }
         >
-          <Meta title="Food Support" description="If you want to meet the most basic nutritional need in Palestine" />
+          <Meta
+            title="Food Support"
+            description="If you want to meet the most basic nutritional need in Palestine"
+          />
         </Card>
       </Col>
 
-      <Col span={8}>
+      <Col span={6}>
         <Card
           hoverable
           style={{
             width: 300,
-            textAlign: 'center',
+            textAlign: "center",
+            opacity: 0.9,
+            marginLeft: '130px'
+
           }}
           cover={
             <img
@@ -64,7 +90,12 @@ const DonateCard = () => (
             />
           }
         >
-          <Meta title="Europe Street beat" description={"If you want to meet the most basic medicine  need in Palestine"} />
+          <Meta
+            title="Europe Street beat"
+            description={
+              "If you want to meet the most basic medicine  need in Palestine"
+            }
+          />
         </Card>
       </Col>
     </Row>

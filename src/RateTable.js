@@ -35,9 +35,15 @@ const RateTable = () => {
       display: 'flex',
       justifyContent: 'center', 
       alignItems: 'center', 
+      borderRadius: '50px'
     }}
     >
-      <table class="table table-dark table-hover col-5">
+      <table class="table table-dark table-hover col-5"
+       style={{
+         
+        borderRadius: '50px'
+      }}
+      >
         <thead>
           <tr>
             <th scope="col">#</th>
