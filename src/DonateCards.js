@@ -11,7 +11,8 @@ const DonateCard = () => (
       alignItems: 'center',
       textAlign: 'center',
       flexDirection: 'column',
-      marginTop: '10px',
+      marginTop: '1px',
+      marginLeft: '120px'
       // backgroundImage: 'url("https://www.millinizam.com/wp-content/uploads/2023/05/israil-filistin-sorunu-nedir.jpg")',
       // backgroundSize: 'cover',
       // backgroundPosition: 'center',
@@ -23,7 +24,7 @@ const DonateCard = () => (
       gutter={24}
       style={{
         textAlign: "center",
-        marginTop: '100px',
+        marginTop: '70px',
 
       }}
     >

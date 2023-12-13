@@ -18,9 +18,9 @@ const { Footer } = Layout;
 
 const HomeDesign = () => (
   <Row>
-    <Col span={24}>
+    <Col span={23}>
     <div style={{
-          height: "1000px",
+          height: "800px",
           backgroundSize: 'cover',
 
           background: `url(${main})`,
@@ -63,7 +63,7 @@ const HomeDesign = () => (
     </Col>
 
     
-    <Col span={0}>
+    <Col span={1}>
  
    
       <Anchor
@@ -94,20 +94,23 @@ const HomeDesign = () => (
     </Col>
 
     {/* --------------- FOOTER --------------- */}
-    <Col span={24}>
+    <Col span={23}>
       <Footer
         style={{
           textAlign: "center",
         }}
       >
          <RateTable/>
+         <br/>
+         <br/>
         <Statistics />
         <div>
 
         </div>
       </Footer>
+      <PageFloatButton />
+
     </Col>
-    <PageFloatButton />
 
   </Row>
 );

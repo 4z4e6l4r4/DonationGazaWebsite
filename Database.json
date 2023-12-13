@@ -67,38 +67,8 @@
       "donations": [
         2340
       ]
-    },
-    {
-      "id": 8,
-      "name": "",
-      "email": "",
-      "donations": [
-        0
-      ]
-    },
-    {
-      "id": 9,
-      "name": "",
-      "email": "",
-      "donations": [
-        0
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Azra R",
-      "email": "AFDASFD@",
-      "password": "Q@",
-      "donations": []
-    },
-    {
-      "id": 11,
-      "name": "AASDSAD",
-      "email": "ASDASDADS",
-      "donations": [
-        15
-      ]
     }
+  
   ],
   "nonameusers": [
     {
