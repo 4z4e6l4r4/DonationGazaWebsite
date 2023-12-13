@@ -1,106 +1,118 @@
-import React, { useState } from 'react';
-import { Button, Form, Input, Select } from 'antd';
-const { Option } = Select;
+import React, { useState } from "react";
+import { Button, Form, Input, DatePicker, Select } from "antd";
+import CardModul from "./CardModul";
 
-const PriceInput = ({ value = {}, onChange }) => {
-  const [number, setNumber] = useState(0);
-  const [currency, setCurrency] = useState('rmb');
-  const triggerChange = (changedValue) => {
-    onChange?.({
-      number,
-      currency,
-      ...value,
-      ...changedValue,
-    });
-  };
 
-  const onNumberChange = (e) => {
-    const newNumber = parseInt(e.target.value || '0', 10);
-    if (Number.isNaN(number)) {
-      return;
-    }
-    if (!('number' in value)) {
-      setNumber(newNumber);
-    }
-    triggerChange({
-      number: newNumber,
-    });
-  };
 
-  const onCurrencyChange = (newCurrency) => {
-    if (!('currency' in value)) {
-      setCurrency(newCurrency);
-    }
-    triggerChange({
-      currency: newCurrency,
-    });
-  };
 
-  return (
-    <span>
-      <Input
-        type="text"
-        value={value.number || number}
-        onChange={onNumberChange}
-        style={{
-          width: 100,
-        }}
-      />
-      <Select
-        value={value.currency || currency}
-        style={{
-          width: 80,
-          margin: '0 8px',
-        }}
-        onChange={onCurrencyChange}
-      >
-        <Option value="rmb">Türk Lirası</Option>
-        <Option value="rmb">Euro</Option>
-        <Option value="dollar">Dollar</Option>
-      </Select>
-    </span>
-  );
-
+const config = {
+  rules: [
+    {
+      type: "object",
+      required: true,
+      message: "Please select time!",
+    },
+  ],
 };
 
+// const onFinish = (fieldsValue) => {
+//   const values = {
+//     ...fieldsValue,
+//     "month-picker": fieldsValue["month-picker"].format("YYYY-MM"),
+//   };
+// };
 
 const Cart = () => {
-  const onFinish = (values) => {
-    console.log('Received values from form: ', values);
-  };
-  const checkPrice = (_, value) => {
-    if (value.number > 0) {
-      return Promise.resolve();
-    }
-    return Promise.reject(new Error('Price must be greater than zero!'));
+
+  const [newDonor, setDonor] = useState({
+    email: "",
+    donation: 0,
+    name:""
+  });
+
+
+
+
+  const [componentSize, setComponentSize] = useState("default");
+  const onFormLayoutChange = ({ size }) => {
+    setComponentSize(size);
   };
   return (
     <Form
-      name="customized_form_controls"
-      layout="inline"
-      onFinish={onFinish}
+      labelCol={{
+        span: 4,
+      }}
+      wrapperCol={{
+        span: 14,
+      }}
+      layout="horizontal"
       initialValues={{
-        price: {
-          number: 0,
-          currency: 'rmb',
-        },
+        size: componentSize,
+      }}
+      onValuesChange={onFormLayoutChange}
+      size={componentSize}
+      
+      style={{
+        maxWidth: 600,
       }}
     >
-      <Form.Item
-        name="price"
-        label="Price"
-        rules={[
-          {
-            validator: checkPrice,
-          },
-        ]}
-      >
-        <PriceInput />
+
+<Form.Item>
+        <h5>Everyting for Free Palestine</h5>
       </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
+
+      <Form.Item value="fullName" label="Full Name"
+      
+       rules={[
+        {
+          required: true,
+        },
+      ]}
+      
+      >
+        <Input   onChange={(e) => setDonor({...newDonor, name: e.target.value})}
+        />
+      </Form.Item>
+      
+      <Form.Item value="email" label="Email"
+       rules={[
+        {
+          required: true,
+        },
+      ]}>
+        <Input
+                onChange={(e) => setDonor({...newDonor, email: e.target.value})}
+
+        />
+      </Form.Item>
+
+      <Form.Item value="large" label="Price"
+      name="price"
+      rules={[
+        {
+          required: true,
+        },
+        {
+          type: "number",
+        },
+        ({ getFieldValue }) => ({
+          validator(_, value) {
+            if (value > 0) {
+              return Promise.resolve();
+            }
+            return Promise.reject(" ");
+          },
+        }),
+      ]}
+      >
+        <Input type="number" 
+                onChange={(e) => setDonor({...newDonor, donation: e.target.value})}
+
+        />
+      </Form.Item>
+
+      <Form.Item value="large">
+        <CardModul newDonor={newDonor}/>
       </Form.Item>
     </Form>
   );

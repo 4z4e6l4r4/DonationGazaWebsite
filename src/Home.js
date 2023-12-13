@@ -1,26 +1,71 @@
 import React, { useState } from 'react';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from '@ant-design/icons';
+
 import { Layout, Menu, Button, theme } from 'antd';
 import HomeDesign from './HomeDesign';
 import { TbGardenCart, TbUserPentagon } from "react-icons/tb";
 import { RiBookOpenFill, RiHome3Line } from 'react-icons/ri';
 import LoginRegister from './LoginRegister';
+import { Modal } from 'antd';
+import { FaUserAstronaut } from "react-icons/fa";
+import { FaHandsHelping } from "react-icons/fa";
+import CardMainModul from './CardMainModul';
 
 
 const { Header, Sider } = Layout;
 
 const Home = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+
+  const showCardModal = () => {
+    setIsCardModalOpen(true);
+  };
+
+
+
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  
+  
+  
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      
+      <Sider >
         <div className="demo-logo-vertical" />
+        <Modal title="Wellcome" visible={isModalOpen} onOk={handleOk} onCancel={handleCancel}
+         okButtonProps={{ style: { display: 'none' } }} 
+         cancelButtonProps={{ style: { display: 'none' } }}>
+
+          
+        <LoginRegister/>
+      </Modal>
+
+      <Modal title="Did you decide to donate?" visible={isCardModalOpen} onOk={handleOk} onCancel={handleCancel}
+         okButtonProps={{ style: { display: 'none' } }} 
+         cancelButtonProps={{ style: { display: 'none' } }}
+         >
+
+<CardMainModul/>
+
+          
+      </Modal>
+
         <Menu
           theme="dark"
           mode="inline"
@@ -28,42 +73,62 @@ const Home = () => {
           items={[
             {   
               key: '1',
-              icon: <LoginRegister/>,
-              label: 'Wellcome',
+              icon: <FaUserAstronaut onClick={showModal} 
+              style={{width:"100%"}}/>,
+              
             },
             {
               key: '2',
-              icon: <RiHome3Line />,
-              label: 'Home',
+              icon: <RiHome3Line style={{width:"100%"}} onClick={showModal}/>,
+              
             },
             {
               key: '3',
-              icon: <RiBookOpenFill />,
-              label: 'Library',
+              icon: <RiBookOpenFill style={{width:"100%"}}/>,              
             },
             {
               key: '4',
-              icon: <TbGardenCart />,
-              label: 'Donation',
+              icon: <TbGardenCart style={{width:"100%"}}  onClick={showCardModal}/>,            
             }
           ]}
         />
       </Sider>
       <Layout>
+
         <Header
-          style={{
-            padding: 0,
+           style={{
+
+            padding: '0 20px ',
             background: colorBgContainer,
+            opacity: 0.9,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
+
+<h1
+ style={{
+  margin: '15',
+  padding: '460px',
+  fontFamily: 'Georgia, Roboto',
+  fontSize: '1.5rem', 
+  color: '#880000',
+  textAlign: 'center', 
+  alignItems: 'center', 
+  fontSize:'30px',
+
+}}
+>Everything For Free Palestine</h1>
+
           <Button
             type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
+            icon={ <FaHandsHelping /> }
             style={{
-              fontSize: '16px',
+              fontSize: '28px',
               width: 64,
               height: 64,
+              marginLeft:'16px',
             }}
           />
         </Header>

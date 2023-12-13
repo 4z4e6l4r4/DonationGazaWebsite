@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "User 1",
+      "email": "user1@example.com",
+      "password": "sifre123",
+      "donations": [
+        100,
+        250,
+        500
+      ]
+    },
+    {
+      "id": 2,
+      "name": "User 2",
+      "email": "user2@example.com",
+      "password": "parola456",
+      "donations": [
+        50,
+        150
+      ]
+    },
+    {
+      "id": 3,
+      "name": "User 3",
+      "email": "user3@example.com",
+      "password": "guvenliSifre",
+      "donations": [
+        300,
+        200,
+        100,
+        50
+      ]
+    },
+    {
+      "id": 4,
+      "name": "a",
+      "email": "fafafa",
+      "password": "aas",
+      "donations": []
+    },
+    {
+      "id": 5,
+      "name": "adsa",
+      "email": "afsf",
+      "password": "fssf",
+      "donations": []
+    },
+    {
+      "id": 6,
+      "name": "a",
+      "email": "a",
+      "password": "sd",
+      "donations": []
+    },
+    {
+      "id": 7,
+      "name": "",
+      "email": "",
+      "password": "",
+      "donations": []
+    },
+    {
+      "id": 8,
+      "email": "yukselazrael@gmail.com",
+      "donations": [
+        32
+      ]
+    },
+    {
+      "id": 9,
+      "email": "yukselazrael@gmail.com",
+      "donations": [
+        4234
+      ]
+    },
+    {
+      "id": 10,
+      "name": "yasın",
+      "email": "yukselazrael@gmail.com",
+      "donations": [
+        344
+      ]
+    }
+  ],
+  "nonameusers": [
+    {
+      "id": 4,
+      "email": "anonim1@example.com",
+      "donation": 1500
+    },
+    {
+      "id": 5,
+      "email": "anonim2@example.com",
+      "donation": 2000
+    }
+  ]
+}

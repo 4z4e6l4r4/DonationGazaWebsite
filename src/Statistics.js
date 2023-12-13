@@ -3,6 +3,9 @@ import CountUp from 'react-countup';
 import { Col, Row, Statistic } from 'antd';
 
 
+
+
+
 const formatter = (value) => <CountUp end={value} separator="," />;
 const Statistics = () => (
   <Row gutter={16}>

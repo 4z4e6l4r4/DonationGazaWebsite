@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   UserOutlined,
   EyeTwoTone,
@@ -11,37 +11,79 @@ import { Col, Row } from 'antd';
 
 import { Button } from "antd";
 
-const Login = ({ onClose }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({UserPageOpen}) => {
+  const [users, setUsers] = useState([]);  
+  const [newLoginUser, setLoginUser] = useState({
+    email: "",
+    password: "",
+  });
 
   const canLogin = () => {
-    console.log("Login Successful", email);
-    <a href="#"></a>
-    onClose();
+    let foundUser = null;
+
+    console.log("Login Successful", newLoginUser);
+    foundUser = checkLoginUser();
+    if (foundUser) {
+      console.log('Kullanıcı bulundu:', foundUser);
+      UserPageOpen();
+    } else {
+      console.log('Kullanıcı bulunamadı.');
+    
+    };
   };
+
+
+  const checkLoginUser = () => {
+    let foundUser = null;
+
+    users.forEach(user => {
+      if (user.email === newLoginUser.email && user.password === newLoginUser.password) {
+        foundUser = user;
+      }
+    });
+  
+    return foundUser;
+  };
+    
+  
+  
+
+  useEffect(() => {
+    fetch('http://localhost:3000/users') 
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch users');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUsers(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching users:', error);
+      });
+  }, []); // Empty dependency array ensures the effect runs only once after the initial render
 
   return (
   <Row >
     <Col span={10}>
     <div>
-      <h2>Login</h2>
-     
+      <h3>Login</h3>
+
       <Input
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={newLoginUser.email}
+        onChange={(e) => setLoginUser({...newLoginUser, email: e.target.value})}
         size="large"
         placeholder=" Enter your Email"
         prefix={<UserOutlined className="site-form-item-icon" />}
         suffix={
-          <Tooltip title="Extra information">
+          <Tooltip title="Please Enter Formel Mail Adress">
             <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
           </Tooltip>
         }
       />
       <br />
-     
       <br />
       <Input.Password
       size="large"
@@ -51,8 +93,8 @@ const Login = ({ onClose }) => {
           visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
         }
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={newLoginUser.password}
+        onChange={(e) => setLoginUser({...newLoginUser, password: e.target.value})}
       />
       <br />
       <br />
