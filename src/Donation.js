@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import CardInputs from "./CardInputs";
-import { Checkbox } from 'antd';
+import { Checkbox } from "antd";
 
 const layout = {
   labelCol: {
@@ -11,7 +11,6 @@ const layout = {
     span: 16,
   },
 };
-
 
 const validateMessages = {
   required: "${label} is required!",
@@ -23,7 +22,6 @@ const validateMessages = {
     range: "${label} must be between ${min} and ${max}",
   },
 };
-/* eslint-enable no-template-curly-in-string */
 
 const onFinish = (values) => {
   console.log(values);
@@ -99,21 +97,12 @@ const Donation = () => {
     >
       <br />
 
-      {/* <Form.Item
-      name={['user', 'name']}
-      label="Full Name"
-      rules={[
-        {
-          required: true,
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item> */}
 
       <Form.Item
+       wrapperCol={{
+        offset: 0,
+      }}
         name={["user", "password"]}
-        label="Card Number"
         rules={[
           {
             required: true,
@@ -121,19 +110,29 @@ const Donation = () => {
           },
         ]}
       >
-        <Input />
+        <Input         placeholder= 'Card Number'
+/>
       </Form.Item>
 
-      <Form.Item {...layout}>    
-        <CardInputs />
+      <Form.Item {...layout}
+       wrapperCol={{
+        offset: 0,
+      }}
+      >
+        <CardInputs {...layout} />
       </Form.Item>
 
-      <Form.Item {...layout}>
-        <Checkbox>I want to donate regularly</Checkbox>
+      <Form.Item {...layout}
+       wrapperCol={{
+        offset: 6,
+      }}>
+        <Checkbox {...layout}
+        >I want to donate regularly</Checkbox>
       </Form.Item>
 
       <Form
         {...layout}
+        
         style={{
           maxWidth: 600,
         }}
@@ -142,7 +141,7 @@ const Donation = () => {
       >
         <Form.Item
           wrapperCol={{
-            offset: 8,
+            offset: 10,
           }}
         >
           <Button type="primary" htmlType="submit">

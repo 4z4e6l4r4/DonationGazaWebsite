@@ -49,6 +49,7 @@ const NumericInput = (props) => {
           onBlur={handleBlur}
           placeholder="CVV"
           maxLength={3}
+          style={{ width: '220px' }}
         />
       </Tooltip>
       

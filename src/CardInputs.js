@@ -38,28 +38,32 @@ const NumericInput = (props) => {
 
   return (
     <div>
-      <div style={{display:'flex'}}>
-        
-      <Tooltip
-        trigger={["focus"]}
-        title={title}
-        placement="topleft"
-        overlayClassName="numeric-input"
-      >
-        <Input
-          {...props}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          placeholder="EXP"
-          maxLength={4}
-        />
-      </Tooltip>
-   {''}
-      <CVV />
-
+      <div style={{ display: "flex" }}
+    >
+        <Tooltip
+          
+          trigger={["focus"]}
+          title={title}
+          placement="topleft"
+          overlayClassName="numeric-input"
+        >
+          <Input
+           
+            {...props}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="EXP"
+            maxLength={4}
+            style={{ width: '210px' }}
+          />
+        </Tooltip>
+        <span style={{ margin: '0 20px' }} /> 
+        <Tooltip>
+          <CVV />
+        </Tooltip>
       </div>
 
-<br/>
+      <br />
       <Tooltip>
         <MessageUs />
       </Tooltip>

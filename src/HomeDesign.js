@@ -4,13 +4,15 @@ import LoginRegister from "./LoginRegister";
 import Statistics from "./Statistics";
 import { Layout } from "antd";
 import Cart from "./Cart";
-import Donation from "./Donation";
+import DonateCards from "./DonateCards";
 import RateTable from './RateTable';
 import { RiHome3Line } from 'react-icons/ri';
 import CardMainModul from './CardMainModul';
 import main from './assets/images/main.jpg';
 import flags from './assets/images/flags.jpg';
-import tank from './assets/images/tank.jpg';
+import PageFloatButton from "./FloatButton";
+
+
 
 const { Footer } = Layout;
 
@@ -26,6 +28,8 @@ const HomeDesign = () => (
           opacity: 0.8,
         }}
       />
+ <DonateCards/>
+      <div/>
       <div style={{
           height: "1vh",
           background: "#880000",
@@ -87,8 +91,13 @@ const HomeDesign = () => (
       >
          <RateTable/>
         <Statistics />
+        <div>
+
+        </div>
       </Footer>
     </Col>
+    <PageFloatButton />
+
   </Row>
 );
 export default HomeDesign;

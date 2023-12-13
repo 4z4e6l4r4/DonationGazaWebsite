@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Layout, Menu, Button, theme } from 'antd';
 import HomeDesign from './HomeDesign';
-import { TbGardenCart, TbUserPentagon } from "react-icons/tb";
+import { TbGardenCart } from "react-icons/tb";
 import { RiBookOpenFill, RiHome3Line } from 'react-icons/ri';
 import LoginRegister from './LoginRegister';
 import { Modal } from 'antd';
@@ -25,9 +25,6 @@ const Home = () => {
   const showCardModal = () => {
     setIsCardModalOpen(true);
   };
-
-
-
 
   const handleOk = () => {
     setIsModalOpen(false);
@@ -110,13 +107,12 @@ const Home = () => {
 <h1
  style={{
   margin: '15',
-  padding: '460px',
+  padding: '400px',
   fontFamily: 'Georgia, Roboto',
-  fontSize: '1.5rem', 
   color: '#880000',
   textAlign: 'center', 
   alignItems: 'center', 
-  fontSize:'30px',
+  fontSize:'25px',
 
 }}
 >Everything For Free Palestine</h1>
